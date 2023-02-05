@@ -1,5 +1,5 @@
 {
   "emojis": "Emoji表情",
-  "emoji-commit.emojiPosition": "Emoji 在提交信息中的位置",
-  "emoji-commit.additionalTypes": "额外的提交类型, 如果启用了commitlint, 需要将新增的type加入到rule中"
+  "emoji-commit-tiny.emojiPosition": "Emoji 在提交信息中的位置",
+  "emoji-commit-tiny.additionalTypes": "额外的提交类型, 如果启用了commitlint, 需要将新增的type加入到rule中"
 }

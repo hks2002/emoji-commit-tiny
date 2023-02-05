@@ -104,7 +104,7 @@
               "suffix",
               "none"
             ],
-            "description": "%emoji-commit.emojiPosition%"
+            "description": "%emoji-commit-tiny.emojiPosition%"
           },
           "emoji-commit-tiny.emojis": {
             "order": 3,
@@ -201,7 +201,7 @@
               }
             ],
             "additionalProperties": true,
-            "markdownDescription": "%emoji-commit.additionalTypes%"
+            "markdownDescription": "%emoji-commit-tiny.additionalTypes%"
           }
         }
       }
