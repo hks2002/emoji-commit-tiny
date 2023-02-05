@@ -2,8 +2,8 @@
  * @Author                : Robert Huang<56649783@qq.com>                     *
  * @CreatedDate           : 2023-02-04 14:25:55                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2023-02-04 20:33:19                               *
- * @FilePath              : auto-header-plus/.commitlintrc.js                 *
+ * @LastEditDate          : 2023-02-05 23:24:14                               *
+ * @FilePath              : emoji-commit-tiny/.commitlintrc.js                *
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
 

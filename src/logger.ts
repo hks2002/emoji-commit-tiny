@@ -2,8 +2,8 @@
  * @Author                : Robert Huang<56649783@qq.com>                     *
  * @CreatedDate           : 2023-02-04 10:59:15                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2023-02-04 10:59:15                               *
- * @FilePath              : auto-header-plus/src/logger.ts                    *
+ * @LastEditDate          : 2023-02-05 23:26:21                               *
+ * @FilePath              : emoji-commit-tiny/src/logger.ts                   *
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
 

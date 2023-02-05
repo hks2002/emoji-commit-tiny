@@ -1,29 +1,10 @@
-declare module '*.json'
+/******************************************************************************
+ * @Author                : Robert Huang<56649783@qq.com>                     *
+ * @CreatedDate           : 2023-02-05 23:32:56                               *
+ * @LastEditors           : Robert Huang<56649783@qq.com>                     *
+ * @LastEditDate          : 2023-02-05 23:32:57                               *
+ * @FilePath              : emoji-commit-tiny/index.d.ts                      *
+ * @CopyRight             : MerBleueAviation                                  *
+ *****************************************************************************/
 
-declare namespace ahp {
-  interface StyleRaw {
-    enable: boolean
-    applyTo: string
-    firstLineStart: string
-    firstLineMiddle: string
-    firstLineEnd: string
-    middleLineStart: string
-    commentElementPrefix: string
-    commentElementSuffix: string
-    middleLineEnd: string
-    lastLineStart: string
-    lastLineMiddle: string
-    lastLineEnd: string
-    commentElementWidth: number
-    lineWidth: number
-  }
-  interface Styles {
-    [key: string]: StyleRaw
-  }
-  interface CommentElementsValues {
-    [key: string]: string
-  }
-  interface CustomCommentElementsValues {
-    [key: string]: string
-  }
-}
+declare module '*.json'

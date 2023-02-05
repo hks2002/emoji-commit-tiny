@@ -7,7 +7,7 @@
 * @CopyRight             : MerBleueAviation
 -->
 
-# Emoji Commit
+# Emoji Commit Tiny
 
 ![](https://github.com/hks2002/emoji-commit-tiny/raw/master/images/icon.png)
 
