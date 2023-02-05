@@ -1,5 +1,5 @@
 {
-  "emojis": "Emojis",
+  "emoji-commit-tiny.emojis": "Emojis",
   "emoji-commit-tiny.emojiPosition": "Emoji Position in commit message",
   "emoji-commit-tiny.additionalTypes": "Additional types, if enabled commitlint, you must add them to it's rules."
 }
