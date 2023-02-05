@@ -2,17 +2,17 @@
  * @Author                : Robert Huang<56649783@qq.com>                     *
  * @CreatedDate           : 2023-02-05 18:48:09                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2023-02-05 18:48:09                               *
+ * @LastEditDate          : 2023-02-05 22:55:03                               *
  * @FilePath              : emoji-commit/src/utils.ts                         *
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import i18next from 'i18next'
 import * as vscode from 'vscode'
 import { CommitEmoji, Obj } from '.'
 import packageJson from '../package.json'
 import { GitExtension } from './git'
-const t = vscode.l10n.t
 
 // 点击小图标进入插件
 const getGitExtension = () => {
@@ -41,7 +41,7 @@ const genInput = (type: string, emoji: string, pos: string, message?: string) =>
 const emojiCommit = (uri?: { rootUri: { path: any } }) => {
   const git = getGitExtension()
   if (!git) {
-    vscode.window.showErrorMessage(t("Can't load git extention, please install it!"))
+    vscode.window.showErrorMessage(i18next.t("Can't load git extention, please install it!"))
     return
   }
 
@@ -53,8 +53,8 @@ const emojiCommit = (uri?: { rootUri: { path: any } }) => {
   const position = config.get('position', 'suffix')
 
   for (const key in emojiPreset) {
-    const label = `${emojiPreset[key]} ${key} ${t(key + '.description')}`
-    const description = `[${t(key + '.title')}]`
+    const label = `${emojiPreset[key]} ${key} ${i18next.t(key + '.description')}`
+    const description = `[${i18next.t(key + '.title')}]`
 
     commitsOptions.push({
       type: key,

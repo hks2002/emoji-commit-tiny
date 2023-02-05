@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@types/lodash": "^4.14.177",
-    "dayjs": "^1.10.7"
+    "dayjs": "^1.10.7",
+    "i18next": "^22.4.9"
   },
   "comment": "[prettier,eslint-plugin-prettier,eslint-config-prettier][husky,semantic-release,@commitlint/config-conventional,@semantic-release/changelog,@semantic-release/git]",
   "devDependencies": {
@@ -41,12 +42,12 @@
     "@vscode/test-electron": "^2.2.0",
     "@vscode/vsce": "2.17.0",
     "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "4.2.1",
     "glob": "^8.0.3",
     "husky": "^8.0.2",
     "mocha": "^10.1.0",
     "prettier": "^2.5.1",
-    "eslint-plugin-prettier": "4.2.1",
-    "eslint-config-prettier": "^8.6.0",
     "semantic-release": "^20.1.0",
     "ts-loader": "^9.4.1",
     "typescript": "^4.9.3",
@@ -168,7 +169,7 @@
               }
             },
             "additionalProperties": false,
-            "markdownDescription": "%git-commit-lint-vscode.emojis%"
+            "markdownDescription": "%emoji-commit-tiny.emojis%"
           },
           "emoji-commit-tiny.additionalType": {
             "order": 4,
