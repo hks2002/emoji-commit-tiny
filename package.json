@@ -62,10 +62,9 @@
     "Other"
   ],
   "keywords": [
-    "git",
     "emoji",
-    "lint",
-    "commit"
+    "commit",
+    "git"
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
