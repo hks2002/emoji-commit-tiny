@@ -93,7 +93,7 @@
       {
         "title": "Emoji Commit Tiny",
         "properties": {
-          "emoji-commit-tiny.emojiPosition": {
+          "emoji-commit-tiny.position": {
             "order": 1,
             "type": "string",
             "default": "suffix",
