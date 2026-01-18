@@ -2,18 +2,17 @@
  * @Author                : Robert Huang<56649783@qq.com>                    *
  * @CreatedDate           : 2023-02-04 20:42:10                              *
  * @LastEditors           : Robert Huang<56649783@qq.com>                    *
- * @LastEditDate          : 2026-01-18 12:02:08                              *
+ * @LastEditDate          : 2026-01-18 14:53:57                              *
  * @FilePath              : emoji-commit-tiny/src/test/suite/index.js        *
  * @CopyRight             : MerBleueAviation                                 *
  ****************************************************************************/
-
 
 
 const FastGlob = require('fast-glob');
 const Mocha = require('mocha');
 const path = require('path');
 
-export async function run() {
+async function run() {
   const mocha = new Mocha({
     ui: 'tdd',
     color: true
@@ -42,3 +41,5 @@ export async function run() {
     throw err;
   }
 }
+
+module.exports = { run };
