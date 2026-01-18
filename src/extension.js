@@ -2,17 +2,18 @@
  * @Author                : Robert Huang<56649783@qq.com>                     *
  * @CreatedDate           : 2023-02-04 10:01:21                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2026-01-18 14:45:00                               *
+ * @LastEditDate          : 2026-01-18 16:28:42                               *
  * @FilePath              : emoji-commit-tiny/src/extension.js                *
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
+
 
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import i18next from 'i18next'
 import * as vscode from 'vscode'
-import l10nEn from '../l10n/bundle.l10n.json'
-import l10nZh from '../l10n/bundle.l10n.zh-cn.json'
+import l10nEn from '../l10n/bundle.json'
+import l10nZh from '../l10n/bundle.zh-cn.json'
 import packageJson from '../package.json'
 import { Logger } from './logger'
 import { emojiCommit } from './utils'

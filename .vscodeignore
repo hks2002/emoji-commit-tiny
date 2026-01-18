@@ -12,3 +12,5 @@ vsc-extension-quickstart.md
 **/*.map
 esbuild.config.js
 eslint.config.mjs
+cspell.json
+cspell.project-words.txt
