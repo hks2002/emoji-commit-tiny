@@ -24,5 +24,10 @@ const options = {
 if (process.argv.includes('--watch')) {
   esbuild.context(options).then(context => context.watch());
 } else {
-  esbuild.build(options);
+  esbuild.build(options)
+    .then(() => process.exit(0))
+    .catch(error => {
+      console.error(error);
+      process.exit(1);
+    });
 }
