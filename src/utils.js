@@ -2,27 +2,24 @@
  * @Author                : Robert Huang<56649783@qq.com>                     *
  * @CreatedDate           : 2023-02-05 18:48:09                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2023-02-05 23:30:38                               *
- * @FilePath              : emoji-commit-tiny/src/utils.ts                    *
+ * @LastEditDate          : 2026-01-18 14:44:49                               *
+ * @FilePath              : emoji-commit-tiny/src/utils.js                    *
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import i18next from 'i18next'
 import * as vscode from 'vscode'
-import { CommitEmoji, Obj } from '.'
 import packageJson from '../package.json'
-import { GitExtension } from './git'
 
 // 点击小图标进入插件
 const getGitExtension = () => {
-  const vscodeGit = vscode.extensions.getExtension<GitExtension>('vscode.git')
+  const vscodeGit = vscode.extensions.getExtension('vscode.git')
   const gitExtension = vscodeGit && vscodeGit.exports
   return gitExtension && gitExtension.getAPI(1)
 }
 
 // 生成提交信息
-const genInput = (type: string, emoji: string, pos: string, message?: string) => {
+const genInput = (type, emoji, pos, message = '') => {
   switch (pos) {
     case 'prefix':
       return `${emoji}${type}: ${message}`
@@ -38,18 +35,18 @@ const genInput = (type: string, emoji: string, pos: string, message?: string) =>
 }
 
 // emoji提交
-const emojiCommit = (uri?: { rootUri: { path: any } }) => {
+const emojiCommit = (uri) => {
   const git = getGitExtension()
   if (!git) {
-    vscode.window.showErrorMessage(i18next.t("Can't load git extention, please install it!"))
+    vscode.window.showErrorMessage(i18next.t("Can't load git extension, please install it!"))
     return
   }
 
   const config = vscode.workspace.getConfiguration(packageJson.name)
   console.debug(config)
 
-  const commitsOptions: CommitEmoji[] = []
-  const emojiPreset: Obj = config.get('emojis', {})
+  const commitsOptions = []
+  const emojiPreset = config.get('emojis', {})
   const position = config.get('position', 'suffix')
 
   for (const key in emojiPreset) {
@@ -63,7 +60,7 @@ const emojiCommit = (uri?: { rootUri: { path: any } }) => {
       description: description
     })
   }
-  const emojiAddition: Obj[] = config.get('additionalType', [])
+  const emojiAddition = config.get('additionalType', [])
   for (const emoji of emojiAddition) {
     commitsOptions.push({
       type: emoji.type,
@@ -75,11 +72,11 @@ const emojiCommit = (uri?: { rootUri: { path: any } }) => {
   console.debug(commitsOptions)
 
   // 显示选项列表，提示用户选择
-  vscode.window.showQuickPick<CommitEmoji>(commitsOptions).then((selected: any) => {
+  vscode.window.showQuickPick(commitsOptions).then((selected) => {
     if (selected) {
       vscode.commands.executeCommand('workbench.view.scm')
       if (uri) {
-        const selectedRepository = git.repositories.find((repository: { rootUri: { path: any } }) => {
+        const selectedRepository = git.repositories.find((repository) => {
           return repository.rootUri.path === uri.rootUri.path
         })
         if (selectedRepository) {

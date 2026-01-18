@@ -21,5 +21,5 @@
   "ci.description": "持续集成流程,比如修改Travis配置、修改发布脚本等",
   "chore.description": "其他更改, 不涉及src和test文件",
   "revert.description": "代码回退",
-  "Can't load git extention, please install it!": "无法加载git插件!请先安装git插件!"
+  "Can't load git extension, please install it!": "无法加载git插件!请先安装git插件!"
 }

@@ -2,8 +2,8 @@
  * @Author                : Robert Huang<56649783@qq.com>                     *
  * @CreatedDate           : 2023-02-04 10:01:21                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2023-02-05 23:30:51                               *
- * @FilePath              : emoji-commit-tiny/src/extension.ts                *
+ * @LastEditDate          : 2026-01-18 14:45:00                               *
+ * @FilePath              : emoji-commit-tiny/src/extension.js                *
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
 
@@ -28,7 +28,6 @@ const i18nResources = {
   en: {
     translation: l10nEn
   },
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   'zhcn': {
     translation: l10nZh
   }
@@ -47,7 +46,7 @@ export { config, logger, i18next }
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context) {
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
   console.log(`Congratulations, "${packageJson.displayName}" is now active!`)

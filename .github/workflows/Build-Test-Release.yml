@@ -1,0 +1,41 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "master"
+
+# https://github.com/OWNER/REPO/settings/actions
+# MUST CHANGE GITHUB_TOKEN PERMISSION FROM READ TO WRITE
+# MUST CHANGE GITHUB_TOKEN PERMISSION ALLOW PULL REQUESTS
+# ⚠ ⚠ ⚠ You need merge pull request manually ⚠ ⚠ ⚠
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - run: xvfb-run -a yarn test
+        if: runner.os == 'Linux'
+
+      - uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          release-type: maven
+          config-file: release-please-config.json

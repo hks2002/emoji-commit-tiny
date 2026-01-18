@@ -1,0 +1,17 @@
+# Project-specific words for cspell
+# Add words here to avoid them being flagged as spelling errors
+# One word per line
+emoji-commit-tiny
+MerBleueAviation
+emoji
+vsce
+vscode
+i18next
+l10n
+esbuild
+Huang
+zhcn
+smol
+workbench
+extensibility
+emojis

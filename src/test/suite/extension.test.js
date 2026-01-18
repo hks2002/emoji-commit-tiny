@@ -3,19 +3,19 @@
  * @CreatedDate           : 2023-02-04 20:41:53                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
  * @LastEditDate          : 2023-02-05 23:29:48                               *
- * @FilePath              : emoji-commit-tiny/src/test/suite/extension.test.ts*
+ * @FilePath              : emoji-commit-tiny/src/test/suite/extension.test.js*
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
 
-import * as assert from 'assert'
-import * as vscode from 'vscode'
+const assert = require('assert');
+const vscode = require('vscode');
 // import * as myExtension from '../../extension';
 
 suite('Extension Test Suite', () => {
-  vscode.window.showInformationMessage('Start all tests.')
+  vscode.window.showInformationMessage('Start all tests.');
 
   test('Sample test', () => {
-    assert.strictEqual(-1, [1, 2, 3].indexOf(5))
-    assert.strictEqual(-1, [1, 2, 3].indexOf(0))
-  })
-})
+    assert.strictEqual(-1, [1, 2, 3].indexOf(5));
+    assert.strictEqual(-1, [1, 2, 3].indexOf(0));
+  });
+});

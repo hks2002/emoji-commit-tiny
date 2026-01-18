@@ -21,5 +21,5 @@
   "ci.description": "Changes to our CI configuration files and scripts",
   "chore.description": "Other changes that don't modify src or test files",
   "revert.description": "Reverts a previous commit",
-  "Can't load git extention, please install it!": "Can't load git extention, please install it!"
+  "Can't load git extension, please install it!": "Can't load git extension, please install it!"
 }

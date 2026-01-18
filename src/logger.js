@@ -2,22 +2,30 @@
  * @Author                : Robert Huang<56649783@qq.com>                     *
  * @CreatedDate           : 2023-02-04 10:59:15                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2023-02-05 23:26:21                               *
- * @FilePath              : emoji-commit-tiny/src/logger.ts                   *
+ * @LastEditDate          : 2026-01-18 14:44:55                               *
+ * @FilePath              : emoji-commit-tiny/src/logger.js                   *
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
 
-import { window } from 'vscode'
+import * as vscode from 'vscode'
 import packageJson from '../package.json'
 
-type LogLevel = 'DEBUG' | 'INFO' | 'WARN' | 'ERROR' | 'NONE'
-
 export class Logger {
-  private outputChannel = window.createOutputChannel(packageJson.displayName)
+  constructor() {
+    this.outputChannel = vscode.window.createOutputChannel(packageJson.displayName)
+    this.logLevel = 'INFO'
+    
+    // 日志级别优先级映射，数值越大优先级越高
+    this.logLevelPriority = {
+      'NONE': 0,
+      'ERROR': 1,
+      'WARN': 2,
+      'INFO': 3,
+      'DEBUG': 4
+    }
+  }
 
-  private logLevel: LogLevel = 'INFO'
-
-  public setOutputLevel(logLevel: LogLevel) {
+  setOutputLevel(logLevel) {
     this.logLevel = logLevel
   }
 
@@ -26,8 +34,8 @@ export class Logger {
    *
    * @param message The message to append to the output channel
    */
-  public debug(message: string, data?: unknown): void {
-    if (this.logLevel === 'NONE' || this.logLevel === 'INFO' || this.logLevel === 'WARN' || this.logLevel === 'ERROR') {
+  debug(message, data) {
+    if (this.logLevelPriority[this.logLevel] < this.logLevelPriority['DEBUG']) {
       return
     }
     this.logMessage(message, 'DEBUG')
@@ -41,8 +49,8 @@ export class Logger {
    *
    * @param message The message to append to the output channel
    */
-  public info(message: string, data?: unknown): void {
-    if (this.logLevel === 'NONE' || this.logLevel === 'WARN' || this.logLevel === 'ERROR') {
+  info(message, data) {
+    if (this.logLevelPriority[this.logLevel] < this.logLevelPriority['INFO']) {
       return
     }
     this.logMessage(message, 'INFO')
@@ -56,8 +64,8 @@ export class Logger {
    *
    * @param message The message to append to the output channel
    */
-  public warn(message: string, data?: unknown): void {
-    if (this.logLevel === 'NONE' || this.logLevel === 'ERROR') {
+  warn(message, data) {
+    if (this.logLevelPriority[this.logLevel] < this.logLevelPriority['WARN']) {
       return
     }
     this.logMessage('\u001b[35m' + message + '\u001b[0m', 'WARN')
@@ -67,8 +75,8 @@ export class Logger {
     }
   }
 
-  public error(message: string, error?: unknown) {
-    if (this.logLevel === 'NONE') {
+  error(message, error) {
+    if (this.logLevelPriority[this.logLevel] < this.logLevelPriority['ERROR']) {
       return
     }
     this.logMessage('\u001b[31m' + message + '\u001b[0m', 'ERROR')
@@ -90,11 +98,11 @@ export class Logger {
     }
   }
 
-  public show() {
+  show() {
     this.outputChannel.show()
   }
 
-  private logObject(data: unknown): void {
+  logObject(data) {
     // const message = JSON.parser
     //   .format(JSON.stringify(data, null, 2), {
     //     parser: "json",
@@ -110,7 +118,7 @@ export class Logger {
    *
    * @param message The message to append to the output channel
    */
-  private logMessage(message: string, logLevel: LogLevel): void {
+  logMessage(message, logLevel) {
     const title = new Date().toLocaleTimeString()
     this.outputChannel.appendLine(`["${logLevel}" - ${title}] ${message}`)
   }
