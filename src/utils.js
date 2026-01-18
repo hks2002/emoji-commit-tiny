@@ -2,12 +2,11 @@
  * @Author                : Robert Huang<56649783@qq.com>                     *
  * @CreatedDate           : 2023-02-05 18:48:09                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2026-01-18 14:44:49                               *
+ * @LastEditDate          : 2026-01-18 19:27:48                               *
  * @FilePath              : emoji-commit-tiny/src/utils.js                    *
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
 
-import i18next from 'i18next'
 import * as vscode from 'vscode'
 import packageJson from '../package.json'
 
@@ -38,7 +37,7 @@ const genInput = (type, emoji, pos, message = '') => {
 const emojiCommit = (uri) => {
   const git = getGitExtension()
   if (!git) {
-    vscode.window.showErrorMessage(i18next.t("Can't load git extension, please install it!"))
+    vscode.window.showErrorMessage(vscode.l10n.t("Can't load git extension, please install it!"))
     return
   }
 
@@ -50,8 +49,8 @@ const emojiCommit = (uri) => {
   const position = config.get('position', 'suffix')
 
   for (const key in emojiPreset) {
-    const label = `${emojiPreset[key]} ${key} ${i18next.t(key + '.description')}`
-    const description = `[${i18next.t(key + '.title')}]`
+    const label = `${emojiPreset[key]} ${key} ${vscode.l10n.t(key + '.description')}`
+    const description = `[${vscode.l10n.t(key + '.title')}]`
 
     commitsOptions.push({
       type: key,

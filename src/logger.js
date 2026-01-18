@@ -2,11 +2,10 @@
  * @Author                : Robert Huang<56649783@qq.com>                     *
  * @CreatedDate           : 2023-02-04 10:59:15                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2026-01-18 18:06:38                               *
+ * @LastEditDate          : 2026-01-18 19:27:31                               *
  * @FilePath              : emoji-commit-tiny/src/logger.js                   *
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
-
 
 import * as vscode from 'vscode'
 import packageJson from '../package.json'

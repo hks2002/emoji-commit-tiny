@@ -2,18 +2,14 @@
  * @Author                : Robert Huang<56649783@qq.com>                     *
  * @CreatedDate           : 2023-02-04 10:01:21                               *
  * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2026-01-18 16:28:42                               *
+ * @LastEditDate          : 2026-01-18 19:27:20                               *
  * @FilePath              : emoji-commit-tiny/src/extension.js                *
  * @CopyRight             : MerBleueAviation                                  *
  *****************************************************************************/
 
-
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import i18next from 'i18next'
 import * as vscode from 'vscode'
-import l10nEn from '../l10n/bundle.json'
-import l10nZh from '../l10n/bundle.zh-cn.json'
 import packageJson from '../package.json'
 import { Logger } from './logger'
 import { emojiCommit } from './utils'
@@ -23,27 +19,7 @@ const config = vscode.workspace.getConfiguration(packageJson.name)
 
 const logger = new Logger()
 logger.setOutputLevel(config.get('logLevel', 'INFO'))
-
-// i18next
-const i18nResources = {
-  en: {
-    translation: l10nEn
-  },
-  'zhcn': {
-    translation: l10nZh
-  }
-}
-
-// lang can't be zh-cn, it should be zhcn
-const locale = vscode.env.language.replace('-', '')
-logger.info(`locale: ${locale}`)
-i18next.init({
-  lng: locale,
-  fallbackLng: 'en',
-  resources: i18nResources
-})
-
-export { config, logger, i18next }
+logger.info(`locale: ${vscode.env.language}`)
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
