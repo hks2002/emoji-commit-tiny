@@ -8,7 +8,7 @@
     "url": "https://github.com/hks2002/emoji-commit-tiny.git"
   },
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "scripts": {
     "compile": "cspell . && node esbuild.config.js",
     "watch": "node esbuild.config.js --watch",
