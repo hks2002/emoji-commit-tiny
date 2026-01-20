@@ -6,7 +6,7 @@
  * @FilePath              : emoji-commit-tiny/src/test/runTest.js            *
  * @CopyRight             : MerBleueAviation                                 *
  ****************************************************************************/
-
+  
 
 
 
