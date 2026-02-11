@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/hks2002/emoji-commit-tiny/compare/v0.1.1...v0.2.0) (2026-02-11)
+
+
+### Features
+
+* ✨better chore ([0a28534](https://github.com/hks2002/emoji-commit-tiny/commit/0a28534e3e66f0a0021ff886f0383cad42eb98fb))
+
 ## [0.1.1](https://github.com/hks2002/emoji-commit-tiny/compare/v0.1.0...v0.1.1) (2026-02-11)
 
 
