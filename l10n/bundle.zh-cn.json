@@ -8,7 +8,7 @@
   "test.title": "测试",
   "build.title": "构建",
   "ci.title": "持续集成",
-  "chore.title": "其他",
+  "chore.title": "杂项",
   "revert.title": "回退",
   "feat.description": "引入新功能",
   "fix.description": "修复Bug",
@@ -19,7 +19,7 @@
   "test.description": "增加测试用例，包括单元测试、集成测试等",
   "build.description": "构建流程,外部依赖变更, 比如升级npm包、gulp、webpack配置等",
   "ci.description": "持续集成流程,比如修改Travis配置、修改发布脚本等",
-  "chore.description": "其他更改, 不涉及src和test文件",
+  "chore.description": "杂项更改, 不涉及src和test文件,细小的更改",
   "revert.description": "代码回退",
   "Can't load git extension, please install it!": "无法加载git插件!请先安装git插件!"
 }

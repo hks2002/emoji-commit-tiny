@@ -20,8 +20,7 @@
     "publish": "vsce publish --yarn --skip-duplicate",
     "package": "vsce package --yarn"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "@vscode/test-electron": "^2.2.0",
@@ -97,7 +96,7 @@
               "test": "🧪",
               "build": "🛠️",
               "ci": "⚙️",
-              "chore": "🔧",
+              "chore": "🧹",
               "revert": "🔙"
             },
             "properties": {
@@ -139,7 +138,7 @@
               },
               "chore": {
                 "type": "string",
-                "default": "🔧"
+                "default": "🧹"
               },
               "revert": {
                 "type": "string",
@@ -158,24 +157,6 @@
                 "emoji": "🎉",
                 "name": "初始化",
                 "description": "初次提交/初始化项目"
-              },
-              {
-                "type": "release",
-                "emoji": "🏷️",
-                "name": "发布",
-                "description": "发布版本"
-              },
-              {
-                "type": "publish",
-                "emoji": "🎉",
-                "name": "新版本",
-                "description": "发布新版本"
-              },
-              {
-                "type": "tag",
-                "emoji": "🏷️",
-                "name": "标签",
-                "description": "发布版本/添加标签"
               }
             ],
             "additionalProperties": true,
