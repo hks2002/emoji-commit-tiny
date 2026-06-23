@@ -2,11 +2,10 @@
  * @Author                : Robert Huang<56649783@qq.com>                      *
  * @CreatedDate           : 2023-02-04 20:42:10                                *
  * @LastEditors           : Robert Huang<56649783@qq.com>                      *
- * @LastEditDate          : 2026-06-20 00:57:38                                *
- * @FilePath              : emoji-commit-tiny/src/test/suite/index.js          *
+ * @LastEditDate          : 2026-06-23 19:23:27                                *
+ * @FilePath              : emoji-commit-tiny/test/suite/index.js              *
  * @CopyRight             : MerBleueAviation                                   *
  ******************************************************************************/
-
 import FastGlob from 'fast-glob'
 import Mocha from 'mocha'
 import { resolve, dirname } from 'path'
@@ -30,12 +29,12 @@ async function run() {
       mocha.addFile(resolve(testsRoot, f))
     })
 
-    await new Promise((resolve, reject) => {
+    await new Promise((res, rej) => {
       mocha.run((failures) => {
         if (failures > 0) {
-          reject(new Error(`${failures} tests failed.`))
+          rej(new Error(`${failures} tests failed.`))
         } else {
-          resolve()
+          res()
         }
       })
     })
