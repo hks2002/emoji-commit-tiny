@@ -1,7 +1,7 @@
 {
   "name": "emoji-commit-tiny",
   "displayName": "Emoji Commit Tiny",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Add emoji to git commit message",
   "categories": [
     "Other"

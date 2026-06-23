@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/hks2002/emoji-commit-tiny/compare/v0.3.0...v0.3.1) (2026-06-23)
+
+
+### Bug Fixes
+
+* 🐛fix test ([d8516fd](https://github.com/hks2002/emoji-commit-tiny/commit/d8516fdd3cc8c49ba1dbc689fa18d78da0a31117))
+
 ## [0.3.0](https://github.com/hks2002/emoji-commit-tiny/compare/v0.2.0...v0.3.0) (2026-06-23)
 
 
