@@ -27,7 +27,7 @@
     "pretest": "pnpm run lint && pnpm run build",
     "test": "node ./test/runTest.js",
     "vscode:prepublish": "pnpm run build",
-    "publish": "vsce publish --skip-duplicate",
+    "publish": "vsce publish --skip-duplicate --no-dependencies",
     "package": "vsce package --no-dependencies"
   },
   "dependencies": {},
