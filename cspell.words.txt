@@ -8,6 +8,7 @@ esbuild
 extensibility
 Huang
 i18next
+keytar
 l10n
 MerBleueAviation
 oxfmt
