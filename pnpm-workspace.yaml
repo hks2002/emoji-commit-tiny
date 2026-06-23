@@ -1,7 +1,7 @@
 allowBuilds:
-  '@vscode/vsce-sign': set this to true or false
-  esbuild: set this to true or false
-  keytar: set this to true or false
+  '@vscode/vsce-sign': true
+  esbuild: true
+  keytar: true
 minimumReleaseAgeExclude:
   - '@oxfmt/binding-android-arm-eabi@0.56.0'
   - '@oxfmt/binding-android-arm64@0.56.0'
