@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "master"
+      - 'master'
 
 # https://github.com/OWNER/REPO/settings/actions
 # MUST CHANGE GITHUB_TOKEN PERMISSION FROM READ TO WRITE
@@ -31,9 +31,9 @@ jobs:
           node-version: 20.x
 
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
-      - run: xvfb-run -a yarn test
+      - run: xvfb-run -a pnpm test
         if: runner.os == 'Linux'
 
       - uses: googleapis/release-please-action@v4

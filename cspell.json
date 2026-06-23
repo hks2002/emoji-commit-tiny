@@ -14,12 +14,9 @@
   "dictionaryDefinitions": [
     {
       "name": "project-words",
-      "path": "./cspell.project-words.txt",
+      "path": "./cspell.words.txt",
       "addWords": true
     }
   ],
-  "dictionaries": [
-    "project-words",
-    "en_us"
-  ]
+  "dictionaries": ["project-words", "en_us"]
 }

@@ -1,52 +1,55 @@
 {
   "name": "emoji-commit-tiny",
   "displayName": "Emoji Commit Tiny",
-  "description": "Add emoji to git commit message",
-  "publisher": "MerBleueAviation",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hks2002/emoji-commit-tiny.git"
-  },
-  "license": "MIT",
   "version": "0.2.0",
-  "scripts": {
-    "compile": "cspell . && node esbuild.config.js",
-    "watch": "node esbuild.config.js --watch",
-    "lint": "eslint src --ext js",
-    "spell-check": "cspell .",
-    "pretest": "yarn run compile && yarn run lint",
-    "test": "node ./src/test/runTest.js",
-    "vscode:prepublish": "yarn run compile",
-    "publish": "vsce publish --yarn --skip-duplicate",
-    "package": "vsce package --yarn"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@eslint/js": "^9.39.2",
-    "@vscode/test-electron": "^2.2.0",
-    "@vscode/vsce": "^3.7.1",
-    "cspell": "^9.6.0",
-    "esbuild": "^0.27.2",
-    "eslint": "^9.39.2",
-    "fast-glob": "3.3.3",
-    "globals": "^17.0.0",
-    "mocha": "^10.1.0"
-  },
-  "icon": "images/icon.png",
-  "engines": {
-    "vscode": "^1.60.0"
-  },
+  "description": "Add emoji to git commit message",
   "categories": [
     "Other"
   ],
   "keywords": [
-    "emoji",
     "commit",
+    "emoji",
     "git"
   ],
-  "activationEvents": [],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hks2002/emoji-commit-tiny.git"
+  },
+  "publisher": "MerBleueAviation",
+  "type": "module",
   "main": "./dist/extension.js",
+  "scripts": {
+    "lint": "oxlint",
+    "fmt": "oxfmt --write",
+    "build": "node esbuild.js",
+    "dev": "node esbuild.js --watch",
+    "pretest": "pnpm run lint && pnpm run build",
+    "test": "node ./test/runTest.js",
+    "vscode:prepublish": "pnpm run build",
+    "publish": "vsce publish --skip-duplicate",
+    "package": "vsce package --no-dependencies"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/vscode": "^1.100.0",
+    "@vscode/l10n-dev": "^0.0.18",
+    "@vscode/test-electron": "^3.0.0",
+    "@vscode/vsce": "^3.9.2",
+    "cspell": "^9.6.0",
+    "esbuild": "^0.28.1",
+    "fast-glob": "3.3.3",
+    "globals": "^17.0.0",
+    "mocha": "^10.1.0",
+    "oxfmt": "^0.56.0",
+    "oxlint": "^1.71.0"
+  },
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "icon": "images/icon.png",
   "l10n": "./l10n",
+  "activationEvents": [],
   "contributes": {
     "commands": [
       {
@@ -74,11 +77,12 @@
           "emoji-commit-tiny.position": {
             "order": 1,
             "type": "string",
-            "default": "suffix",
+            "default": "end",
             "enum": [
               "prefix",
               "middle",
               "suffix",
+              "end",
               "none"
             ],
             "description": "%emoji-commit-tiny.emojiPosition%"

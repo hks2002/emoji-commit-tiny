@@ -1,14 +1,15 @@
-/******************************************************************************
- * @Author                : Robert Huang<56649783@qq.com>                     *
- * @CreatedDate           : 2023-02-05 18:48:09                               *
- * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2026-01-18 19:27:48                               *
- * @FilePath              : emoji-commit-tiny/src/utils.js                    *
- * @CopyRight             : MerBleueAviation                                  *
- *****************************************************************************/
+/*******************************************************************************
+ * @Author                : Robert Huang<56649783@qq.com>                      *
+ * @CreatedDate           : 2023-02-05 18:48:09                                *
+ * @LastEditors           : Robert Huang<56649783@qq.com>                      *
+ * @LastEditDate          : 2026-06-23 16:39:40                                *
+ * @FilePath              : emoji-commit-tiny/src/core.js                      *
+ * @CopyRight             : MerBleueAviation                                   *
+ ******************************************************************************/
 
 import * as vscode from 'vscode'
 import packageJson from '../package.json'
+import { getL10n } from './l10n.js'
 
 // 点击小图标进入插件
 const getGitExtension = () => {
@@ -26,6 +27,8 @@ const genInput = (type, emoji, pos, message = '') => {
       return `${type}: ${emoji}${message}`
     case 'middle':
       return `${type}${emoji}: ${message}`
+    case 'end':
+      return `${type}: ${message}${emoji}`
     case 'none':
       return `${type}: ${message}`
     default:
@@ -37,7 +40,7 @@ const genInput = (type, emoji, pos, message = '') => {
 const emojiCommit = (uri) => {
   const git = getGitExtension()
   if (!git) {
-    vscode.window.showErrorMessage(vscode.l10n.t("Can't load git extension, please install it!"))
+    vscode.window.showErrorMessage(getL10n("Can't load git extension, please install it!"))
     return
   }
 
@@ -49,14 +52,14 @@ const emojiCommit = (uri) => {
   const position = config.get('position', 'suffix')
 
   for (const key in emojiPreset) {
-    const label = `${emojiPreset[key]} ${key} ${vscode.l10n.t(key + '.description')}`
-    const description = `[${vscode.l10n.t(key + '.title')}]`
+    const label = `${emojiPreset[key]} ${key} [${getL10n(key + '.title')}]`
+    const description = `${getL10n(key + '.description')}`
 
     commitsOptions.push({
       type: key,
       emoji: emojiPreset[key],
       label: label,
-      description: description
+      description: description,
     })
   }
   const emojiAddition = config.get('additionalType', [])
@@ -64,8 +67,8 @@ const emojiCommit = (uri) => {
     commitsOptions.push({
       type: emoji.type,
       emoji: emoji.emoji,
-      label: `${emoji.emoji} ${emoji.type} ${emoji.description}`,
-      description: emoji.name
+      label: `${emoji.emoji} ${emoji.type} ${emoji.name}`,
+      description: emoji.description,
     })
   }
   console.debug(commitsOptions)
@@ -89,4 +92,4 @@ const emojiCommit = (uri) => {
     }
   })
 }
-export { getGitExtension, emojiCommit }
+export { emojiCommit }

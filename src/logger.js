@@ -1,27 +1,26 @@
-/******************************************************************************
- * @Author                : Robert Huang<56649783@qq.com>                     *
- * @CreatedDate           : 2023-02-04 10:59:15                               *
- * @LastEditors           : Robert Huang<56649783@qq.com>                     *
- * @LastEditDate          : 2026-01-18 19:27:31                               *
- * @FilePath              : emoji-commit-tiny/src/logger.js                   *
- * @CopyRight             : MerBleueAviation                                  *
- *****************************************************************************/
-
+/*******************************************************************************
+ * @Author                : Robert Huang<56649783@qq.com>                      *
+ * @CreatedDate           : 2023-02-04 10:59:15                                *
+ * @LastEditors           : Robert Huang<56649783@qq.com>                      *
+ * @LastEditDate          : 2026-06-21 17:33:11                                *
+ * @FilePath              : emoji-commit-tiny/src/logger.js                    *
+ * @CopyRight             : MerBleueAviation                                   *
+ ******************************************************************************/
 import * as vscode from 'vscode'
 import packageJson from '../package.json'
 
-export class Logger {
+class Logger {
   constructor() {
     this.outputChannel = vscode.window.createOutputChannel(packageJson.displayName)
     this.logLevel = 'INFO'
-    
+
     // 日志级别优先级映射，数值越大优先级越高
     this.logLevelPriority = {
-      'NONE': 0,
-      'ERROR': 1,
-      'WARN': 2,
-      'INFO': 3,
-      'DEBUG': 4
+      NONE: 0,
+      ERROR: 1,
+      WARN: 2,
+      INFO: 3,
+      DEBUG: 4,
     }
   }
 
@@ -119,7 +118,11 @@ export class Logger {
    * @param message The message to append to the output channel
    */
   logMessage(message, logLevel) {
+    console.log(message)
     const title = new Date().toLocaleTimeString()
     this.outputChannel.appendLine(`["${logLevel}" - ${title}] ${message}`)
   }
 }
+
+const logger = new Logger()
+export { logger }
