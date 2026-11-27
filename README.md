@@ -14,7 +14,6 @@
 ![Github Version](https://img.shields.io/github/package-json/v/hks2002/emoji-commit-tiny)
 ![Github Build Status](https://img.shields.io/github/actions/workflow/status/hks2002/emoji-commit-tiny/Build-Test-Release.yml)
 ![GitHub License](https://img.shields.io/github/license/hks2002/emoji-commit-tiny)
-![GitHub Starts](https://img.shields.io/github/stars/hks2002/emoji-commit-tiny)
 
 [English](./README.md) | [简体中文](./README.zh-cn.md)
 
