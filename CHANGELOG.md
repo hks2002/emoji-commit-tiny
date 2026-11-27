@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/hks2002/emoji-commit-tiny/compare/v0.4.0...v0.4.1) (2026-11-27)
+
+
+### Bug Fixes
+
+* 🐛 fix workflows build bug ([5920930](https://github.com/hks2002/emoji-commit-tiny/commit/5920930e0fae7a7e79ef88bdb895a98b7a48360d))
+
 ## [0.4.0](https://github.com/hks2002/emoji-commit-tiny/compare/v0.3.1...v0.4.0) (2026-11-27)
 
 
